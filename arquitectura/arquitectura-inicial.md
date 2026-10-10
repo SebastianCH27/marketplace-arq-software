@@ -30,3 +30,85 @@ La capa de lógica de negocio procesa las solicitudes y utiliza la capa
 de datos cuando necesita almacenar o recuperar información.
 
 Los resultados regresan a la capa de presentación para mostrarse al usuario.
+
+
+## Diagrama de arquitectura
+
+```mermaid
+flowchart TD
+
+    subgraph ACTORES["ACTORES"]
+        Cliente["Cliente"]
+        Seller["Seller"]
+        Admin["Administrador"]
+    end
+
+    subgraph PRESENTACION["PRESENTACIÓN"]
+        Web["Aplicación Web → API REST"]
+    end
+
+    subgraph NEGOCIO["LÓGICA DE NEGOCIO"]
+        Usuarios["Usuarios"]
+        Sellers["Sellers"]
+        Catalogo["Catálogo"]
+        Carrito["Carrito"]
+        Pedidos["Pedidos"]
+    end
+
+    subgraph DATOS["DATOS"]
+        BD["Base de datos"]
+    end
+
+    subgraph EXTERNOS["SISTEMAS EXTERNOS"]
+        Pago["Pasarela de pago"]
+        ERP["ERP"]
+        Envio["Servicio de envío"]
+    end
+
+    ACTORES --> PRESENTACION
+    PRESENTACION --> NEGOCIO
+    NEGOCIO --> DATOS
+    DATOS -->|"integraciones"| EXTERNOS
+
+    Cliente ~~~ Seller
+    Seller ~~~ Admin
+
+    Usuarios ~~~ Sellers
+    Sellers ~~~ Catalogo
+    Catalogo ~~~ Carrito
+    Carrito ~~~ Pedidos
+
+    Pago ~~~ ERP
+    ERP ~~~ Envio
+
+    style ACTORES fill:#222,stroke:#fff,stroke-width:2px,color:#fff
+    style PRESENTACION fill:#222,stroke:#fff,stroke-width:2px,color:#fff
+    style NEGOCIO fill:#222,stroke:#fff,stroke-width:2px,color:#fff
+    style DATOS fill:#222,stroke:#fff,stroke-width:2px,color:#fff
+    style EXTERNOS fill:#222,stroke:#fff,stroke-width:2px,color:#fff
+
+    style Cliente fill:#222,stroke:#fff,color:#fff
+    style Seller fill:#222,stroke:#fff,color:#fff
+    style Admin fill:#222,stroke:#fff,color:#fff
+
+    style Web fill:#222,stroke:#fff,color:#fff
+
+    style Usuarios fill:#222,stroke:#fff,color:#fff
+    style Sellers fill:#222,stroke:#fff,color:#fff
+    style Catalogo fill:#222,stroke:#fff,color:#fff
+    style Carrito fill:#222,stroke:#fff,color:#fff
+    style Pedidos fill:#222,stroke:#fff,color:#fff
+
+    style BD fill:#222,stroke:#fff,color:#fff
+
+    style Pago fill:#222,stroke:#fff,color:#fff
+    style ERP fill:#222,stroke:#fff,color:#fff
+    style Envio fill:#222,stroke:#fff,color:#fff
+```
+
+### Observación sobre el diagrama de referencia
+
+El diagrama reproduce el ejemplo de la guía, que dibuja la flecha de
+integraciones desde la capa de Datos. Sin embargo, la descripción de
+la guía asigna al módulo de Pedidos la integración con la pasarela
+de pago y el servicio de envío.
