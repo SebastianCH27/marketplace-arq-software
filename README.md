@@ -1,4 +1,4 @@
-# Marketplace — Arquitectura de Software
+# Marketplace de productos para mascotas
 
 ## Datos académicos
 
@@ -21,11 +21,20 @@ se relacionan sus componentes y justificar las decisiones arquitectónicas.
 También quiero mejorar el uso de Git y GitHub para registrar avances
 y colaborar de manera ordenada.
 
-## Proyecto
+## Descripción del proyecto
 
-Este repositorio corresponde al caso Marketplace. Su documentación
-y código se desarrollarán progresivamente siguiendo las guías de
-laboratorio del curso.
+Marketplace académico de productos para mascotas en el que diferentes
+vendedores (sellers) pueden ofrecer sus productos y los clientes pueden
+consultarlos y realizar compras.
+
+Este repositorio reúne los avances del proyecto desarrollados
+progresivamente siguiendo las guías de laboratorio del curso.
+
+## Caso de estudio
+
+Se toma [GoPet](https://www.gopet.pe/) como referencia funcional para
+comprender el negocio de un marketplace de productos para mascotas.
+
 
 ## Entorno de desarrollo
 
