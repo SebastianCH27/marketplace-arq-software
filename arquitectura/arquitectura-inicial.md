@@ -35,19 +35,20 @@ Los resultados regresan a la capa de presentación para mostrarse al usuario.
 ## Diagrama de arquitectura
 
 ```mermaid
-flowchart TD
-
-    subgraph ACTORES["ACTORES"]
+flowchart TB
+    subgraph ACTORES["Actores"]
         Cliente["Cliente"]
         Seller["Seller"]
         Admin["Administrador"]
     end
 
-    subgraph PRESENTACION["PRESENTACIÓN"]
-        Web["Aplicación Web → API REST"]
+    subgraph PRESENTACION["Capa de presentación"]
+        Web["Aplicación web"]
+        API["API REST"]
+        Web -->|"Solicitudes HTTPS"| API
     end
 
-    subgraph NEGOCIO["LÓGICA DE NEGOCIO"]
+    subgraph NEGOCIO["Capa de lógica de negocio"]
         Usuarios["Usuarios"]
         Sellers["Sellers"]
         Catalogo["Catálogo"]
@@ -55,55 +56,51 @@ flowchart TD
         Pedidos["Pedidos"]
     end
 
-    subgraph DATOS["DATOS"]
-        BD["Base de datos"]
+    subgraph DATOS["Capa de datos"]
+        Acceso["Componentes de acceso a datos"]
+        BD[("Base de datos")]
+        Acceso --> BD
     end
 
-    subgraph EXTERNOS["SISTEMAS EXTERNOS"]
+    subgraph INTEGRACION["Componentes de integración"]
+        AdaptPago["Adaptador de pagos"]
+        AdaptEnvio["Adaptador de envíos"]
+        AdaptFactura["Adaptador de facturación"]
+        AdaptERP["Adaptador de ERP"]
+    end
+
+    subgraph EXTERNOS["Sistemas externos"]
         Pago["Pasarela de pago"]
-        ERP["ERP"]
         Envio["Servicio de envío"]
+        Factura["Servicio de facturación"]
+        ERP["ERP"]
     end
 
-    ACTORES --> PRESENTACION
-    PRESENTACION --> NEGOCIO
-    NEGOCIO --> DATOS
-    DATOS -->|"integraciones"| EXTERNOS
+    Cliente --> Web
+    Seller --> Web
+    Admin --> Web
 
-    Cliente ~~~ Seller
-    Seller ~~~ Admin
+    API --> Usuarios
+    API --> Sellers
+    API --> Catalogo
+    API --> Carrito
+    API --> Pedidos
 
-    Usuarios ~~~ Sellers
-    Sellers ~~~ Catalogo
-    Catalogo ~~~ Carrito
-    Carrito ~~~ Pedidos
+    Usuarios --> Acceso
+    Sellers --> Acceso
+    Catalogo --> Acceso
+    Carrito --> Acceso
+    Pedidos --> Acceso
 
-    Pago ~~~ ERP
-    ERP ~~~ Envio
+    Pedidos --> AdaptPago
+    Pedidos --> AdaptEnvio
+    Pedidos --> AdaptFactura
+    Catalogo --> AdaptERP
 
-    style ACTORES fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-    style PRESENTACION fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-    style NEGOCIO fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-    style DATOS fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-    style EXTERNOS fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-
-    style Cliente fill:#222,stroke:#fff,color:#fff
-    style Seller fill:#222,stroke:#fff,color:#fff
-    style Admin fill:#222,stroke:#fff,color:#fff
-
-    style Web fill:#222,stroke:#fff,color:#fff
-
-    style Usuarios fill:#222,stroke:#fff,color:#fff
-    style Sellers fill:#222,stroke:#fff,color:#fff
-    style Catalogo fill:#222,stroke:#fff,color:#fff
-    style Carrito fill:#222,stroke:#fff,color:#fff
-    style Pedidos fill:#222,stroke:#fff,color:#fff
-
-    style BD fill:#222,stroke:#fff,color:#fff
-
-    style Pago fill:#222,stroke:#fff,color:#fff
-    style ERP fill:#222,stroke:#fff,color:#fff
-    style Envio fill:#222,stroke:#fff,color:#fff
+    AdaptPago --> Pago
+    AdaptEnvio --> Envio
+    AdaptFactura --> Factura
+    AdaptERP --> ERP
 ```
 
 ### Observación sobre el diagrama de referencia
