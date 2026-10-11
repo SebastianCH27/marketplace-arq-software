@@ -13,3 +13,4 @@ de los atributos de calidad y las restricciones.
 | DA03 | El sistema debe proteger los datos de los usuarios y las operaciones de compra. | AC04 — Seguridad | Puede influir en la autenticación, la autorización y la protección de datos. |
 | DA04 | El sistema debe integrarse con una pasarela de pago externa mediante una API. | RC04 — Pasarela de pago | Condiciona la forma de comunicación e integración con el servicio externo de pago. |
 | DA05 | El sistema debe utilizar una API REST para la comunicación entre el frontend y el backend. | RC03 — API REST | Limita las alternativas de comunicación entre estas partes del sistema. |
+| DA06 | El sistema debe permitir modificar funcionalidades sin afectar innecesariamente otros módulos. | AC05 — Mantenibilidad | Influye en la separación de responsabilidades, la modularidad y el control de las dependencias internas. |
