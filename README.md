@@ -65,12 +65,11 @@ Referencia: https://github.com/advisories/GHSA-vfj7-8cjw-p6xm
 
 ### Verificación de versiones
 
-![Versiones de las herramientas](docs/evidencias/01-versiones.png)
+![Versiones de las herramientas](docs/img/01-versiones.png)
 
 ### Configuración de Git
 
-![Identidad de Git y rama inicial](docs/evidencias/02-identidad-git.png)
-
+![Identidad de Git y rama inicial](docs/img/02-identidad-git.png)
 ### Creación del proyecto y estructura base
 
-![Proyecto y estructura de carpetas](docs/evidencias/03-estructura.png)
+![Proyecto y estructura de carpetas](docs/img/03-estructura.png)
