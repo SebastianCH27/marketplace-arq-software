@@ -30,6 +30,7 @@ Los principales módulos serán:
 | Módulo | Responsabilidad |
 |--------|-----------------|
 | Usuarios | Gestionar cuentas y roles de clientes, sellers y administradores. |
+| Sellers | Gestionar los vendedores registrados y su información comercial en la plataforma. |
 | Catálogo | Gestionar y consultar productos, precios y disponibilidad. |
 | Carrito | Gestionar productos seleccionados, cantidades y totales. |
 | Pedidos | Registrar compras y gestionar sus estados y consultas. |
