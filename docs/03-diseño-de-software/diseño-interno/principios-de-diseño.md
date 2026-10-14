@@ -12,7 +12,7 @@ Documentar cómo se aplican los principios SOLID en el backend del Marketplace, 
 
 ## SOLID en el módulo Pedidos
 
-![SOLID en el módulo Pedidos](/img/solid-modulo-pedidos.png)
+![SOLID en el módulo Pedidos](../../img/solid-modulo-pedidos.png)
 
 | Principio | Dónde se aplica (capa) | Cómo se cumple en el Marketplace | Archivos |
 |---|---|---|---|
