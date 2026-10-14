@@ -64,7 +64,7 @@ src/
 
 ## 3. Capas del módulo y regla de dependencia
 
-![Diagrama de paquetes del módulo Pedidos](/img/paquetes-modulo-pedidos.png)
+![Diagrama de paquetes del módulo Pedidos](../../img/paquetes-modulo-pedidos.png)
 
 **Regla de dependencia:** el código solo puede importar hacia el centro (dominio). El dominio no conoce Express, PostgreSQL ni Stripe.
 
@@ -82,7 +82,7 @@ src/
 
 ## 4. Diagrama de clases
 
-![Diagrama de clases del módulo Pedidos](/img/clases-modulo-pedidos.png)
+![Diagrama de clases del módulo Pedidos](../../img/clases-modulo-pedidos.png)
 
 ### 4.1 Notación UML utilizada
 
@@ -98,7 +98,7 @@ src/
 
 ## 5. Flujo de ejecución: crear pedido
 
-![Diagrama de secuencia de crear pedido](/img/secuencia-crear-pedido.png)
+![Diagrama de secuencia de crear pedido](../../img/secuencia-crear-pedido.png)
 
 | Paso | Origen → destino | Acción | Capa |
 |---|---|---|---|
