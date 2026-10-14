@@ -21,6 +21,7 @@
 | **Atributo de calidad** | Disponibilidad |
 | **Fuente** | Cliente |
 | **Estímulo** | El cliente intenta realizar una operación durante una campaña comercial o cuando ocurre una falla en un componente. |
+| **Artefacto** | API REST y módulos que atienden las operaciones críticas del Marketplace. |
 | **Condición** | El sistema está publicado y cuenta con monitoreo. |
 | **Respuesta esperada** | El sistema mantiene disponibles las operaciones que puede atender y comunica los errores de forma controlada cuando un servicio necesario no responde. |
 | **Medida** | **Propuesta por validar:** disponibilidad mensual de 99,5 % para las operaciones críticas. |
@@ -34,6 +35,7 @@
 | **Atributo de calidad** | Escalabilidad |
 | **Fuente** | Incremento de solicitudes de los clientes |
 | **Estímulo** | Aumenta la cantidad de usuarios que utilizan el Marketplace simultáneamente. |
+| **Artefacto** | API REST, módulos de negocio y acceso a datos del Marketplace. |
 | **Condición** | Se realiza una prueba con datos, configuración y solicitudes documentados. |
 | **Respuesta esperada** | El sistema soporta el aumento de usuarios sin superar los límites acordados de tiempo de respuesta y errores. |
 | **Medida** | **Propuesta por validar:** soportar hasta 200 usuarios simultáneos, con el 95 % de las respuestas por debajo de 3 segundos y menos del 1 % de errores técnicos. |
@@ -47,6 +49,7 @@
 | **Atributo de calidad** | Seguridad |
 | **Fuente** | Usuario sin sesión, con credenciales inválidas o sin permisos suficientes |
 | **Estímulo** | El usuario intenta acceder a una función protegida o realizar una operación no autorizada. |
+| **Artefacto** | Control de sesiones y permisos de las operaciones protegidas. |
 | **Condición** | Se realizan pruebas sobre las funciones protegidas del Marketplace. |
 | **Respuesta esperada** | El sistema rechaza la operación, no ejecuta el cambio solicitado y no expone información sensible. |
 | **Medida** | Rechazar el 100 % de los intentos no autorizados incluidos en las pruebas definidas, sin exposición de datos sensibles en las respuestas revisadas. |
@@ -60,6 +63,7 @@
 | **Atributo de calidad** | Mantenibilidad |
 | **Fuente** | Equipo de desarrollo |
 | **Estímulo** | Se modifica una regla de negocio o se necesita sustituir el proveedor de pagos. |
+| **Artefacto** | Módulo modificado y sus contratos y adaptadores relacionados. |
 | **Condición** | El sistema está organizado en módulos y dispone de pruebas para las funciones afectadas. |
 | **Respuesta esperada** | El cambio se concentra en el módulo responsable sin afectar funciones no relacionadas, salvo que exista una dependencia justificada. |
 | **Medida** | Las pruebas del módulo modificado y las pruebas de regresión acordadas deben aprobarse. Las dependencias entre módulos deben respetar las reglas de arquitectura establecidas. |
